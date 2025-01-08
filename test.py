@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Read the csv file.
 netflix_df = pd.read_csv("netflix_data.csv")
@@ -16,5 +17,6 @@ print(duration)
 # Subset all the rows with the column duration.
 # Compare the subset rows with duration.
 # Store the length of the result
-short_movie_count = len(netflix_df[netflix_df["duration"] < duration])
+short_movie_count = len(netflix_df[np.logical_and(netflix_df["duration"] < duration, netflix_df["genre"] == "Action")])
 print(short_movie_count)
+# print(netflix_df["genre"] == "Action")
