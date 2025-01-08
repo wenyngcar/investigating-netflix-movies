@@ -14,9 +14,8 @@ print(duration)
 # plt.hist(netflix_df["duration"])
 # plt.savefig("plot.png")
 
-# Subset all the rows with the column duration.
-# Compare the subset rows with duration.
+# Subset all the rows with the column duration and genre.
+# Compare the subset duration rows with duration and subset genre if action.
 # Store the length of the result
 short_movie_count = len(netflix_df[np.logical_and(netflix_df["duration"] < duration, netflix_df["genre"] == "Action")])
 print(short_movie_count)
-# print(netflix_df["genre"] == "Action")
